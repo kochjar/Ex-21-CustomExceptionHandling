@@ -9,8 +9,12 @@ namespace CustomExceptionHandling
             // GetValueAtPosition
             try
             {
-                int posValue = TotallySafe.GetValueAtPosition(1);
+                int posValue = TotallySafe.GetValueAtPosition(-1);
                 Console.WriteLine(posValue);
+            }
+            catch (NegativeIndexOutOfRangeException e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
             }
             catch (IndexOutOfRangeException e)
             {
